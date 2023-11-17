@@ -1,0 +1,37 @@
+version: "3.8"
+
+services:
+  wfgoapi:
+     container_name: wfgoapi
+     build: .
+     ports:
+       - "3000:3000"
+     environment:
+       DD_DB_HOST: postgres
+       POSTGRES_URL: postgres://postgres:123@localhost:5432/wfDbms?sslmode=disable
+       ORIGIN_ALLOWED: http://localhost:4200
+       PORT: 3000
+       FULL_PATH: D:/Projects/go/wfgoapi/migrations
+       GOOGLE_CLIENT_ID: -
+       GOOGLE_CLIENT_SECRET: -
+     restart: on-failure
+     depends_on:
+       - postgres
+  postgres:
+    container_name: postgres
+    image: postgres:14.1-alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: wfDbms
+    restart: on-failure
+    command: [
+      "postgres",
+      "-c", "shared_preload_libraries=pgcrypto"
+    ]
+    volumes:
+      - wfDbms:/var/lib/postgresql/data
+volumes:
+  wfDbms:

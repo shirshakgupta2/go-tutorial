@@ -1,0 +1,42 @@
+for mod we run go mod init github.com/shirshak/mymodule
+
+for mux to download we use go get -u github.com/gorilla/mux
+
+for gorm download we use   go get -u  gorm.io/driver/mysql
+
+for gorm download we use   go get -u  gorm.io/gorm
+
+for more detail of mux we use go env
+
+for .exe file  we make use of go build .
+
+for verifing the modules use go mod verify
+
+for listing all the package  go list all
+
+for listing all the package which is being using go list -m all
+
+for listing all the versions  go list -m -version github.com/gorilla/mux
+
+for knowing why  should i use the package   go mod why github.com/gorilla/mux
+
+
+
+go mod graph
+
+for changing the  version of the mod file of go :=  go mod edit -go 1.16
+
+for changing the  version of the module mod name of go :=  go mod edit -module myEditedmoduleName
+
+for listing  a vender  go mod vendor
+
+
+
+
+
+{
+  "movie_id":1,
+  "movie_name":"gopal",
+  "movie_cost":200
+  
+}

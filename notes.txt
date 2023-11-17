@@ -1,0 +1,11 @@
+converting integer to String
+strconv.Itoa(100)
+
+Converting String to int
+strconv.ParseFloat(String,byte sizesize)
+strconv.ParseFloat(100 ,64)
+
+
+ORM
+
+we can use jinzhu or folospace 

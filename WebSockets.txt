@@ -1,0 +1,45 @@
+we’ll be working with the gorilla/websocket package 
+
+WebSockets are upgraded HTTP connections that live until the connection is killed by 
+either the client or the server.
+
+ It’s through this WebSocket connection that we can perform duplex communication
+ we can communicate to-and-from the server from our client using this single connection.
+
+REALITY OF WEBSOCKETS
+
+ WebSockets is that they use a grand total of 1 TCP connection and all communication is 
+ done over this single long-lived TCP connection. 
+
+
+TCP (Transmission Control Protocol) 
+
+1! We establish a connection between a router and a computer or mobile device 
+
+2! TCP protocol allows two endpoints in a shared computer network to establish a
+   connection that enables a two-way transmission of data
+
+
+How exactly do TCP connections work?
+
+=>TCP allows for transmission of information in both directions. This means that computer
+systems that communicate over TCP can send and receive data at the same time, similar
+to a telephone conversation. The protocol uses segments (packets) as the basic units 
+of data transmission.
+
+
+
+
+The three-way handshake: How a TCP connection is established
+
+The actual process for establishing a connection with the TCP protocol is as follows:
+
+1.First, the requesting client sends the server a SYN packet or segment
+ (SYN stands for synchronize) with a unique, random number. 
+ This number ensures full transmission in the correct order (without duplicates).
+2.If the server has received the segment, it agrees to the connection by returning 
+ a SYN-ACK packet (ACK stands for acknowledgment) including the client's sequence 
+ number plus 1. It also transmits its own sequence number to the client.
+3.Finally, the client acknowledges the receipt of the SYN-ACK segment by
+ sending its own ACK packet, which in this case contains the server's sequence number plus 1. 
+ At the same time, the client can already begin transferring data to the server.

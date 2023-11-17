@@ -1,0 +1,51 @@
+Object Relational Mapping libraries (ORMs) to allow Go developers to use 
+JSON key:value pair syntax and encoding to map directly to a SQL database like PostgreSQL. 
+ORMs enable developers to use their native programming paradigm to map data to SQL. 
+
+
+An ORM transforms your database information to Golang objects and vice-versa. When working
+ with an ORM, instead of writing SQL queries directly into your application, 
+you can map your data much better using Golang struct like this:
+
+
+// User struct for my database
+type User struct {
+   gorm.Model
+   firstName    string
+   lastName     string
+   email        string
+   message      string
+   profession   string
+   age          int
+   zipCode      int
+}
+
+
+Disadvantage of ORM
+1.create a level of abstraction from the actual data being stored in the database.
+2.ORMs frameworks can appear and disappear overnight.
+
+Advantage of ORM
+
+1.ORMs make it much easier to keep track of web application data in Go 
+2.reduce the amount of drawn-out coding by switching out a bunch of SQL
+ commands inside my application for something that is easier to work with. 
+
+
+No. of   GO ORM's 
+
+1.XORM: A simple and powerful ORM framework for Go
+2.Go-PG: A postgreSQL client and ORM for Golang
+3.SQLBOILDER: A tool to generate a Go ORM tailored to your database schema
+4.SQLX: Not an ORM, but another great tool for SQL in Go
+
+
+
+Reason For Using Go-ORM
+1.GORM is a developer-friendly ORM and has great community support and easy to
+ follow documentation.
+2.GORM provides CRUD operations and can also be used for the initial migration 
+ and creation of the database schema. 
+3.Gorm also supports sqlite, mysql, postgres, and mssql
+
+
